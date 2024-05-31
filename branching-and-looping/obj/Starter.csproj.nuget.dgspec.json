@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deepk\\Desktop\\Guided-project-branching-looping-CSharp-main\\GuidedProject\\Starter\\Starter.csproj": {}
+    "C:\\Users\\deepk\\Desktop\\Guided-project-branching-looping-CSharp-main\\GuidedProject\\Starter\\branching-and-looping\\Starter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deepk\\Desktop\\Guided-project-branching-looping-CSharp-main\\GuidedProject\\Starter\\Starter.csproj": {
+    "C:\\Users\\deepk\\Desktop\\Guided-project-branching-looping-CSharp-main\\GuidedProject\\Starter\\branching-and-looping\\Starter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deepk\\Desktop\\Guided-project-branching-looping-CSharp-main\\GuidedProject\\Starter\\Starter.csproj",
+        "projectUniqueName": "C:\\Users\\deepk\\Desktop\\Guided-project-branching-looping-CSharp-main\\GuidedProject\\Starter\\branching-and-looping\\Starter.csproj",
         "projectName": "Starter",
-        "projectPath": "C:\\Users\\deepk\\Desktop\\Guided-project-branching-looping-CSharp-main\\GuidedProject\\Starter\\Starter.csproj",
+        "projectPath": "C:\\Users\\deepk\\Desktop\\Guided-project-branching-looping-CSharp-main\\GuidedProject\\Starter\\branching-and-looping\\Starter.csproj",
         "packagesPath": "C:\\Users\\deepk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deepk\\Desktop\\Guided-project-branching-looping-CSharp-main\\GuidedProject\\Starter\\obj\\",
+        "outputPath": "C:\\Users\\deepk\\Desktop\\Guided-project-branching-looping-CSharp-main\\GuidedProject\\Starter\\branching-and-looping\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deepk\\AppData\\Roaming\\NuGet\\NuGet.Config"
