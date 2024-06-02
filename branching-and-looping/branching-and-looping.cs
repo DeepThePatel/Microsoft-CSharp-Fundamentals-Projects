@@ -285,7 +285,7 @@ do
             if (petCount >= maxPets)
             {
                 Console.WriteLine("We have reached our limit on the number of pets that we can manage.");
-                Console.WriteLine("Press the Enter key to continue.");
+                Console.WriteLine("\n\rPress the Enter key to continue.");
                 readResult = Console.ReadLine();
             }
 
@@ -332,7 +332,7 @@ do
 
             Console.WriteLine();
             Console.WriteLine("Age and physical description fields are complete for all of our friends.");
-            Console.WriteLine("Press the Enter key to continue.");
+            Console.WriteLine("\n\rPress the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
 
@@ -377,7 +377,7 @@ do
 
             Console.WriteLine();
             Console.WriteLine("Nickname and personality description fields are complete for all of our friends.");
-            Console.WriteLine("Press the Enter key to continue.");
+            Console.WriteLine("\n\rPress the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
 
@@ -409,7 +409,7 @@ do
                     } while (validEntry == false); 
                 }
             }
-            Console.WriteLine("Press the Enter key to continue.");
+            Console.WriteLine("\n\rPress the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
 
@@ -440,21 +440,77 @@ do
                     } while (validEntry == false); 
                 }
             }
-            Console.WriteLine("Press the Enter key to continue.");
+            Console.WriteLine("\n\rPress the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
 
         case "7":
             // Display all cats with a specified characteristic
-            Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
-            Console.WriteLine("Press the Enter key to continue.");
+            string catCharacteristic = "";
+
+            while(catCharacteristic == "") {
+                Console.WriteLine($"\nEnter one desired cat characteristic to search for");
+                readResult = Console.ReadLine();
+                if (readResult != null) {
+                    catCharacteristic = readResult.ToLower().Trim();
+                }
+            }
+
+            string catDescription = "";
+            bool noMatchesCat = true;
+
+            // Loop through array to search for matching animals
+            for (int i = 0; i < maxPets; i++) {
+                if (ourAnimals[i,1].Contains("cat")) {
+                    catDescription = ourAnimals[i, 4] + "\n" + ourAnimals[i, 5];
+                    if (catDescription.Contains(catCharacteristic)) {
+                        Console.WriteLine($"\nOur cat {ourAnimals[i, 3]} is a match!");
+                        Console.WriteLine(catDescription);
+                        noMatchesCat = false;
+                    }
+                }
+            }
+
+            if (noMatchesCat) {
+                Console.WriteLine("None of our dogs are a match found for: " + catCharacteristic);
+            }
+
+            Console.WriteLine("\n\rPress the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
 
         case "8":
             // Display all dogs with a specified characteristic
-            Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
-            Console.WriteLine("Press the Enter key to continue.");
+            string dogCharacteristic = "";
+
+            while(dogCharacteristic == "") {
+                Console.WriteLine($"\nEnter one desired dog characteristic to search for");
+                readResult = Console.ReadLine();
+                if (readResult != null) {
+                    dogCharacteristic = readResult.ToLower().Trim();
+                }
+            }
+
+            string dogDescription = "";
+            bool noMatchesDog = true;
+
+            // Loop through array to search for matching animals
+            for (int i = 0; i < maxPets; i++) {
+                if (ourAnimals[i,1].Contains("dog")) {
+                    dogDescription = ourAnimals[i, 4] + "\n" + ourAnimals[i, 5];
+                    if (dogDescription.Contains(dogCharacteristic)) {
+                        Console.WriteLine($"\nOur dog {ourAnimals[i, 3]} is a match!");
+                        Console.WriteLine(dogDescription);
+                        noMatchesDog = false;
+                    }
+                }
+            }
+
+            if (noMatchesDog) {
+                Console.WriteLine("None of our dogs are a match found for: " + dogCharacteristic);
+            }
+
+            Console.WriteLine("\n\rPress the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
 
