@@ -380,9 +380,10 @@ do
                 else
                 {
                     Console.WriteLine("The current pet's " + ourAnimals[i, 0]);
+                    Console.WriteLine("Current " + ourAnimals[i,2]);
 
                     do {
-                        Console.WriteLine("Enter an age for " + ourAnimals[i, 0]);
+                        Console.WriteLine("Enter an updated age for " + ourAnimals[i, 0]);
                         readResult = Console.ReadLine();
                         if (!string.IsNullOrWhiteSpace(readResult)) {
                             if (int.TryParse(readResult, out petAge)) {
@@ -402,7 +403,31 @@ do
 
         case "6":
             // Edit an animal’s personality description");
-            Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 0] == "ID #: ")
+                {
+                    continue;
+                }
+                else
+                {
+                    Console.WriteLine("The current pet's " + ourAnimals[i, 0]);
+                    Console.WriteLine(ourAnimals[i,5]);
+
+                    do {
+                        Console.WriteLine("Enter the updated personality description for " + ourAnimals[i, 0]);
+
+                        readResult = Console.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(readResult)) {
+                                ourAnimals[i,5] = readResult;
+                                validEntry = true;
+                        }
+                        else {
+                            validEntry = false;
+                        }
+                    } while (validEntry == false); 
+                }
+            }
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
