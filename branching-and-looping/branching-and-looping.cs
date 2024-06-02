@@ -1,6 +1,3 @@
-using System;
-using System.IO;
-
 // the ourAnimals array will store the following: 
 string animalSpecies = "";
 string animalID = "";
@@ -103,9 +100,6 @@ do
     if (readResult != null)
     {
         menuSelection = readResult.ToLower();
-        // NOTE: We could put a do statement around the menuSelection entry to ensure a valid entry, but we
-        //  use a conditional statement below that only processes the valid entry values, so the do statement 
-        //  is not required here. 
     }
 
     // use switch-case to process the selected menu option
@@ -376,8 +370,32 @@ do
             break;
 
         case "5":
-            // Edit an animal’s age");
-            Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
+            // Edit an animal’s age";
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 0] == "ID #: ")
+                {
+                    continue;
+                }
+                else
+                {
+                    Console.WriteLine("The current pet's " + ourAnimals[i, 0]);
+
+                    do {
+                        Console.WriteLine("Enter an age for " + ourAnimals[i, 0]);
+                        readResult = Console.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(readResult)) {
+                            if (int.TryParse(readResult, out petAge)) {
+                                ourAnimals[i,2] = petAge.ToString();
+                                validEntry = true;
+                            }
+                        }
+                        else {
+                            validEntry = false;
+                        }
+                    } while (validEntry == false); 
+                }
+            }
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;

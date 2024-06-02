@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\C# Fundamentals\\Microsoft-CSharp-Fundamentals-Projects\\branching-and-looping\\Starter.csproj": {}
+    "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\Microsoft-CSharp-Fundamentals-Projects\\branching-and-looping\\Starter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\C# Fundamentals\\Microsoft-CSharp-Fundamentals-Projects\\branching-and-looping\\Starter.csproj": {
+    "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\Microsoft-CSharp-Fundamentals-Projects\\branching-and-looping\\Starter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\C# Fundamentals\\Microsoft-CSharp-Fundamentals-Projects\\branching-and-looping\\Starter.csproj",
+        "projectUniqueName": "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\Microsoft-CSharp-Fundamentals-Projects\\branching-and-looping\\Starter.csproj",
         "projectName": "Starter",
-        "projectPath": "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\C# Fundamentals\\Microsoft-CSharp-Fundamentals-Projects\\branching-and-looping\\Starter.csproj",
+        "projectPath": "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\Microsoft-CSharp-Fundamentals-Projects\\branching-and-looping\\Starter.csproj",
         "packagesPath": "C:\\Users\\deepk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\C# Fundamentals\\Microsoft-CSharp-Fundamentals-Projects\\branching-and-looping\\obj\\",
+        "outputPath": "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\Microsoft-CSharp-Fundamentals-Projects\\branching-and-looping\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deepk\\AppData\\Roaming\\NuGet\\NuGet.Config"
