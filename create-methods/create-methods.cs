@@ -5,6 +5,7 @@ Console.CursorVisible = false;
 int height = Console.WindowHeight - 1;
 int width = Console.WindowWidth - 5;
 bool shouldExit = false;
+int speed = 0;
 
 // Console position of the player
 int playerX = 0;
@@ -27,11 +28,6 @@ int food = 0;
 InitializeGame();
 while (!shouldExit) 
 {
-    if(TerminalResized()) {
-        Console.Clear();
-        Console.WriteLine("Console was resized. Program exiting.");
-        shouldExit = true;
-    }
     Move();
 }
 
@@ -71,8 +67,32 @@ void FreezePlayer()
     player = states[0];
 }
 
+bool Consumed() {
+    if (playerX == foodX && playerY == foodY) {
+        ChangePlayer();
+        ShowFood();
+        return true;
+    }
+    return false;
+}
+
+bool IsFrozen(string player) {
+    if (player == "(X_X)") {
+        FreezePlayer();
+        return true;
+    }
+    return false;
+}
+
+int IncreaseSpeed(string player, int speed) {
+    if (player == "(^-^)") {
+        return 3;
+    }
+    return 0;
+}
+
 // Reads directional input from the Console and moves the player
-void Move() 
+void Move(bool validKey = true, int speed = 0) 
 {
     int lastX = playerX;
     int lastY = playerY;
@@ -85,15 +105,27 @@ void Move()
 		case ConsoleKey.DownArrow: 
             playerY++; 
             break;
-		case ConsoleKey.LeftArrow:  
-            playerX--; 
+		case ConsoleKey.LeftArrow: 
+            playerX = playerX - 1 - IncreaseSpeed(player, speed); 
             break;
 		case ConsoleKey.RightArrow: 
-            playerX++; 
+            playerX = playerX + 1 + IncreaseSpeed(player, speed); 
             break;
 		case ConsoleKey.Escape:     
-            shouldExit = true; 
+            shouldExit = true;
             break;
+        default:
+            break;
+    }
+
+    if (validKey == false) {
+        shouldExit = true;
+    }
+
+    if(TerminalResized()) {
+        Console.Clear();
+        Console.WriteLine("Console was resized. Program exiting.");
+        shouldExit = true;
     }
 
     // Clear the characters at the previous position
@@ -110,6 +142,9 @@ void Move()
     // Draw the player at the new location
     Console.SetCursorPosition(playerX, playerY);
     Console.Write(player);
+
+    Consumed();
+    IsFrozen(player);
 }
 
 // Clears the console, displays the food and player
