@@ -8,7 +8,7 @@ Mimicks an animal shelter application allowing for the ability to:
 - Add new animals to the shelter
 - Validate each animal's characteristics
 - Edit each animal's characteristics
-- Search for animals that match an entered search term
+- Search for animals that match entered search terms
   
 <br>
 
