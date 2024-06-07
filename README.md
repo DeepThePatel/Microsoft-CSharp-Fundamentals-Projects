@@ -23,3 +23,21 @@ This application features:
 - Create two dimensional arrays of numbers and strings.
 - Search data in arrays to display or update data.
 - Modify and build complex strings from multiple data sources, and format data for display across regions.
+
+<br>
+
+<h2>Create Methods Project</h2>
+
+Minigame where player can move their character around in the terminal and consume food. It allows for the ability to:
+- Move player around in the console
+- Consume "food"
+- Change character appearance based on type of food
+- Increase movement speed or freeze player depending on type of food player consumes
+- Terminate either if an invalid key is pressed or if the terminal window is resized
+
+<br>
+
+This application features:
+- Using Visual Studio Code to develop a C# console application that uses methods to implement logical workflows.
+- Understanding existing code and make informed changes to design.
+- Creating return values and methods with required and optional parameters.
