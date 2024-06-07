@@ -84,7 +84,7 @@ bool IsFrozen(string player) {
     return false;
 }
 
-int IncreaseSpeed(string player, int speed) {
+int IncreaseSpeed(string player) {
     if (player == "(^-^)") {
         return 3;
     }
@@ -106,10 +106,10 @@ void Move(bool validKey = true, int speed = 0)
             playerY++; 
             break;
 		case ConsoleKey.LeftArrow: 
-            playerX = playerX - 1 - IncreaseSpeed(player, speed); 
+            playerX = playerX - 1 - IncreaseSpeed(player); 
             break;
 		case ConsoleKey.RightArrow: 
-            playerX = playerX + 1 + IncreaseSpeed(player, speed); 
+            playerX = playerX + 1 + IncreaseSpeed(player); 
             break;
 		case ConsoleKey.Escape:     
             shouldExit = true;
