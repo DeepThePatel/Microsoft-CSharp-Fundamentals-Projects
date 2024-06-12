@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\deepk\\Desktop\\Challenge-project-debugging-CSharp-main\\Challenge-project-debugging-CSharp-main\\ChallengeProject\\Starter\\Starter.csproj": {}
+    "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\Microsoft-CSharp-Fundamentals-Projects\\debugging-and-exceptions\\Starter.csproj": {}
   },
   "projects": {
-    "c:\\Users\\deepk\\Desktop\\Challenge-project-debugging-CSharp-main\\Challenge-project-debugging-CSharp-main\\ChallengeProject\\Starter\\Starter.csproj": {
+    "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\Microsoft-CSharp-Fundamentals-Projects\\debugging-and-exceptions\\Starter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\deepk\\Desktop\\Challenge-project-debugging-CSharp-main\\Challenge-project-debugging-CSharp-main\\ChallengeProject\\Starter\\Starter.csproj",
+        "projectUniqueName": "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\Microsoft-CSharp-Fundamentals-Projects\\debugging-and-exceptions\\Starter.csproj",
         "projectName": "Starter",
-        "projectPath": "c:\\Users\\deepk\\Desktop\\Challenge-project-debugging-CSharp-main\\Challenge-project-debugging-CSharp-main\\ChallengeProject\\Starter\\Starter.csproj",
+        "projectPath": "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\Microsoft-CSharp-Fundamentals-Projects\\debugging-and-exceptions\\Starter.csproj",
         "packagesPath": "C:\\Users\\deepk\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\deepk\\Desktop\\Challenge-project-debugging-CSharp-main\\Challenge-project-debugging-CSharp-main\\ChallengeProject\\Starter\\obj\\",
+        "outputPath": "C:\\Users\\deepk\\OneDrive\\Documents\\Computer Science\\Microsoft-CSharp-Fundamentals-Projects\\debugging-and-exceptions\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deepk\\AppData\\Roaming\\NuGet\\NuGet.Config"

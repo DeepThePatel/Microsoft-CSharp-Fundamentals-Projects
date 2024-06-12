@@ -19,7 +19,7 @@ expected.
 
 
 string? readResult = null;
-bool useTestData = false;
+bool useTestData = true;
 
 Console.Clear();
 
@@ -29,7 +29,7 @@ int registerCheckTillTotal = 0;
 // registerDailyStartingCash: $1 x 50, $5 x 20, $10 x 10, $20 x 5 => ($350 total)
 int[,] registerDailyStartingCash = new int[,] { { 1, 50 }, { 5, 20 }, { 10, 10 }, { 20, 5 } };
 
-int[] testData = new int[] { 6, 10, 17, 20, 31, 36, 40, 41 };
+int[] testData = new int[100];
 int testCounter = 0;
 
 LoadTillEachMorning(registerDailyStartingCash, cashTill);
@@ -47,12 +47,15 @@ Console.WriteLine($"Expected till value: {registerCheckTillTotal}");
 Console.WriteLine();
 
 var valueGenerator = new Random((int)DateTime.Now.Ticks);
+Random rand = new Random();
 
 int transactions = 100;
 
 if (useTestData)
 {
-    transactions = testData.Length;
+    for (int i = 0; i < testData.Length; i++) {
+        testData[i] = rand.Next(2,50);
+    }
 }
 
 while (transactions > 0)
@@ -115,50 +118,75 @@ static void LoadTillEachMorning(int[,] registerDailyStartingCash, int[] cashTill
 
 static void MakeChange(int cost, int[] cashTill, int twenties, int tens = 0, int fives = 0, int ones = 0)
 {
+
+    int amountPaid = twenties * 20 + tens * 10 + fives * 5 + ones;
+    int changeNeeded = amountPaid - cost;
+    bool correctChange = false;
+    int twentiesGiven = 0;
+    int tensGiven = 0;
+    int fivesGiven = 0;
+    int onesGiven = 0;
+
     cashTill[3] += twenties;
     cashTill[2] += tens;
     cashTill[1] += fives;
     cashTill[0] += ones;
 
-    int amountPaid = twenties * 20 + tens * 10 + fives * 5 + ones;
-    int changeNeeded = amountPaid - cost;
-
-    if (changeNeeded < 0)
+    if (changeNeeded < 0) {
+        cashTill[3] -= twenties;
+        cashTill[2] -= tens;
+        cashTill[1] -= fives;
+        cashTill[0] -= ones;
         throw new InvalidOperationException("InvalidOperationException: Not enough money provided to complete the transaction.");
+    }
+        
 
     Console.WriteLine("Cashier prepares the following change:");
 
-    while ((changeNeeded > 19) && (cashTill[3] > 0))
-    {
-        cashTill[3]--;
-        changeNeeded -= 20;
-        Console.WriteLine("\t A twenty");
-    }
+    do {
+        while ((changeNeeded > 19) && (cashTill[3] > 0))
+        {
+            cashTill[3]--;
+            twentiesGiven++;
+            changeNeeded -= 20;
+            Console.WriteLine("\t A twenty");
+        }
 
-    while ((changeNeeded > 9) && (cashTill[2] > 0))
-    {
-        cashTill[2]--;
-        changeNeeded -= 10;
-        Console.WriteLine("\t A ten");
-    }
+        while ((changeNeeded > 9) && (cashTill[2] > 0))
+        {
+            cashTill[2]--;
+            tensGiven++;
+            changeNeeded -= 10;
+            Console.WriteLine("\t A ten");
+        }
 
-    while ((changeNeeded > 4) && (cashTill[1] > 0))
-    {
-        cashTill[1]--;
-        changeNeeded -= 5;
-        Console.WriteLine("\t A five");
-    }
+        while ((changeNeeded > 4) && (cashTill[1] > 0))
+        {
+            cashTill[1]--;
+            fivesGiven++;
+            changeNeeded -= 5;
+            Console.WriteLine("\t A five");
+        }
 
-    while ((changeNeeded > 0) && (cashTill[0] > 0))
-    {
-        cashTill[0]--;
-        changeNeeded -= 1;
-        Console.WriteLine("\t A one");
-    }
+        while ((changeNeeded > 0) && (cashTill[0] > 0))
+        {
+            cashTill[0]--;
+            onesGiven++;
+            changeNeeded -= 1;
+            Console.WriteLine("\t A one");
+        }
+        
+        if (changeNeeded > 0) {
+            cashTill[3] = cashTill[3] - twenties + twentiesGiven;
+            cashTill[2] = cashTill[2] - tens + tensGiven;
+            cashTill[1] = cashTill[1] - fives + fivesGiven;
+            cashTill[0] = cashTill[0] - ones + onesGiven;
+            throw new InvalidOperationException("InvalidOperationException: The till is unable to make change for the cash provided.");
+        }
 
-    if (changeNeeded > 0)
-        throw new InvalidOperationException("InvalidOperationException: The till is unable to make change for the cash provided.");
-
+        correctChange = true;
+            
+    } while (correctChange == false);
 }
 
 static void LogTillStatus(int[] cashTill)
