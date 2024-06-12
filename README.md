@@ -1,4 +1,8 @@
 This repo is dedicated to the projects I have created while following the Microsoft Certified C# Fundamentals Certification course. The base code for these projects have been developed by Microsoft. Any additional changes to the base code were made solely by me. You can view the [freeCodeCamp](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#write-your-first-code-using-c-sharp) website to view the modules and courses on the Microsoft Website.
+
+<br>
+
+You can view my certification [here](https://www.freecodecamp.org/certification/d9asty/foundational-c-sharp-with-microsoft).
 <br>
 <br>
 <h2>Branching and Looping Project</h2>
