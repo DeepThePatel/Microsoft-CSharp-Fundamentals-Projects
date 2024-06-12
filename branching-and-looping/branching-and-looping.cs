@@ -17,6 +17,7 @@ string anotherPet = "y";
 bool validEntry = false;
 int petAge = 0;
 
+// array of search animation icons
 string[] searchingIcons = {"| ", "/ ", "--", @"\ "};
 
 // array used to store runtime data, there is no persisted data
